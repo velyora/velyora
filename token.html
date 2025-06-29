@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>استخراج التوكن</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    button {
+      background: #00d46f;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>اضغط الزر لعرض التوكن</h2>
+  <button onclick="showToken()">استخراج التوكن</button>
+
+  <script>
+    function showToken() {
+      const token = localStorage.getItem("token") || localStorage.getItem("authToken") || localStorage.getItem("access_token");
+      if (token) {
+        alert("✅ التوكن:\n" + token);
+      } else {
+        alert("❌ لم يتم العثور على توكن في localStorage.");
+      }
+    }
+  </script>
+</body>
+</html>
