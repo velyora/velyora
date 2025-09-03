@@ -5,17 +5,17 @@ export default async function handler(req, res) {
 
   const { message } = req.body;
 
-  const TELEGRAM_BOT_TOKEN = "ضع_توكن_البوت_هنا";
-  const CHAT_ID = "ضع_ChatID_هنا";
+  const TELEGRAM_BOT_TOKEN = "6961886563:AAHZwl-UaAWaGgXwzyp1vazRu1Hf37FKX2A";
+  const CHAT_ID = "-2399588626";
 
-  const telegramUrl = `https://api.telegram.org/bot${6961886563:AAHZwl-UaAWaGgXwzyp1vazRu1Hf37FKX2A}/sendMessage`;
+  const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
   try {
     const response = await fetch(telegramUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: -2399588626,
+        chat_id: CHAT_ID,
         text: message,
         parse_mode: "HTML"
       }),
